@@ -9,3 +9,7 @@ https://jub0bs.com
 * Embedding an image from raw.githubusercontent.com
 
 .image https://raw.githubusercontent.com/egonelbre/gophers/master/vector/friends/heart-balloon.svg 300 _
+
+* Test Playground OAST
+
+.play ./main.go
